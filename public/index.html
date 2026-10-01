@@ -3,15 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portal TI | Solicitud de soporte</title>
+    <meta
+      name="description"
+      content="Portal estático responsive de soporte para Nova Servicios."
+    />
+    <title>Nova Servicios | Portal de Soporte</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script src="assets/js/ui.js" defer></script>
   </head>
+
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
     <header class="site-header">
       <nav class="navbar container" aria-label="Navegación principal">
-        <a class="navbar__logo" href="#inicio">Portal TI</a>
+        <a class="navbar__logo" href="#inicio" aria-label="Nova Servicios, inicio">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span>Nova <strong>Servicios</strong></span>
+        </a>
+
         <button
           class="navbar__toggle"
           type="button"
@@ -21,119 +31,338 @@
         >
           Menú
         </button>
+
         <ul class="navbar__menu" id="nav-menu">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#soporte">Solicitar soporte</a></li>
+          <li><a href="#estados">Estados</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a class="nav-cta" href="#soporte">Solicitar soporte</a></li>
         </ul>
       </nav>
     </header>
-    <main id="contenido" class="container" tabindex="-1">
+
+    <main id="contenido" tabindex="-1">
       <section class="hero" id="inicio" aria-labelledby="hero-title">
-        <h1 id="hero-title">Soporte TI para tu equipo</h1>
-        <p>Consulta nuestros servicios y describe tu incidencia.</p>
-        <a class="button" href="#soporte">Solicitar soporte</a>
-      </section>
-      <section id="servicios" aria-labelledby="services-title">
-        <h2 id="services-title">Servicios de soporte</h2>
-        <div class="services__grid">
-          <article class="service-card">
-            <h3>Soporte de red</h3>
-            <p>Diagnóstico de problemas de conectividad.</p>
-            <a href="#soporte">Solicitar soporte de red</a>
-          </article>
-          <article class="service-card service-card--featured">
-            <h3>Soporte prioritario</h3>
-            <p>Evaluación de incidencias que impiden continuar el trabajo.</p>
-            <a href="#soporte">Solicitar atención prioritaria</a>
-          </article>
-          <article class="service-card">
-            <h3>Hardware</h3>
-            <p>Ayuda para equipos.</p>
-            <a href="#soporte">Solicitar soporte de hardware</a>
-          </article>
-          <article class="service-card">
-            <h3>Software</h3>
-            <p>Ayuda para aplicaciones.</p>
-            <a href="#soporte">Solicitar soporte de software</a>
-          </article>
+        <div class="container hero__grid">
+          <div>
+            <p class="eyebrow">CENTRO DE SOPORTE</p>
+            <h1 id="hero-title">
+              Soluciones claras para que tu servicio siga avanzando.
+            </h1>
+            <p class="hero__text">
+              Reporta una incidencia, solicita ayuda o consulta nuestros servicios. El
+              proceso es rápido, simple y pensado para cualquier dispositivo.
+            </p>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#soporte">Crear solicitud</a>
+              <a class="button button--secondary" href="#servicios">Ver servicios</a>
+            </div>
+            <div class="trust-row" aria-label="Características del portal">
+              <span>✓ Atención organizada</span>
+              <span>✓ Prioridad visible</span>
+              <span>✓ Seguimiento simulado</span>
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="Resumen del soporte">
+            <span class="status-dot" aria-hidden="true"></span>
+            <p class="card-label">SOPORTE NOVA</p>
+            <h2>¿Necesitas ayuda?</h2>
+            <p>
+              Completa el formulario y simula el registro de tu solicitud en unos
+              segundos.
+            </p>
+            <a href="#soporte">Ir al formulario →</a>
+          </aside>
         </div>
       </section>
-      <section id="soporte" aria-labelledby="support-title">
-        <h2 id="support-title">Solicitud de soporte</h2>
-        <form class="support-form" id="support-form">
-          <p class="form-note">
-            Los campos con * son obligatorios. Esta demostración no envía ni almacena
-            solicitudes.
-          </p>
-          <fieldset>
-            <legend>Datos de contacto</legend>
-            <label for="nombre">Nombre completo *</label>
-            <input
-              id="nombre"
-              name="nombre"
-              type="text"
-              required
-              minlength="3"
-              autocomplete="name"
-              aria-describedby="nombre-help"
-            />
-            <small id="nombre-help">Escribe al menos 3 caracteres.</small>
 
-            <label for="email">Correo electrónico *</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              autocomplete="email"
-              aria-describedby="email-help"
-            />
-            <small id="email-help">Para la práctica usa ana@example.test.</small>
-          </fieldset>
-          <fieldset>
-            <legend>Datos de la incidencia</legend>
-            <label for="tipo">Tipo de incidencia *</label>
-            <select id="tipo" name="tipo" required>
-              <option value="">Selecciona una opción</option>
-              <option value="red">Red</option>
-              <option value="hardware">Hardware</option>
-              <option value="software">Software</option>
-              <option value="acceso">Acceso</option>
-            </select>
-            <fieldset class="priority">
-              <legend>Prioridad *</legend>
-              <label
-                ><input type="radio" name="prioridad" value="alta" required /> Alta</label
-              >
-              <label><input type="radio" name="prioridad" value="media" /> Media</label>
-              <label><input type="radio" name="prioridad" value="baja" /> Baja</label>
+      <section class="section" id="servicios" aria-labelledby="services-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">NUESTROS SERVICIOS</p>
+            <h2 id="services-title">Elige el tipo de ayuda que necesitas</h2>
+            <p>
+              Cuatro áreas ficticias para organizar las solicitudes de Nova Servicios.
+            </p>
+          </div>
+
+          <div class="services__grid">
+            <article class="service-card">
+              <span class="service-icon" aria-hidden="true">⌁</span>
+              <h3>Soporte técnico</h3>
+              <p>Ayuda con equipos, sistemas, aplicaciones y problemas de acceso.</p>
+              <a href="#soporte">Solicitar →</a>
+            </article>
+
+            <article class="service-card service-card--featured">
+              <span class="service-icon" aria-hidden="true">◫</span>
+              <h3>Configuración</h3>
+              <p>
+                Asistencia para configurar cuentas, dispositivos y servicios digitales.
+              </p>
+              <a href="#soporte">Solicitar →</a>
+            </article>
+
+            <article class="service-card">
+              <span class="service-icon" aria-hidden="true">◎</span>
+              <h3>Consultas</h3>
+              <p>Resuelve dudas sobre procedimientos, servicios y uso de plataformas.</p>
+              <a href="#soporte">Consultar →</a>
+            </article>
+
+            <article class="service-card">
+              <span class="service-icon" aria-hidden="true">↻</span>
+              <h3>Mantenimiento</h3>
+              <p>
+                Reporta revisiones, incidencias preventivas o requerimientos técnicos.
+              </p>
+              <a href="#soporte">Reportar →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--soft" id="soporte" aria-labelledby="support-title">
+        <div class="container support-layout">
+          <div class="section-heading">
+            <p class="eyebrow">NUEVA SOLICITUD</p>
+            <h2 id="support-title">Cuéntanos qué necesitas</h2>
+            <p>
+              Completa los campos obligatorios. Esta demo valida los datos y simula el
+              proceso, pero no envía ni guarda tickets.
+            </p>
+            <div class="notice">
+              <strong>Demo académica:</strong> ningún dato se almacena en un servidor.
+            </div>
+          </div>
+
+          <form class="support-form" id="support-form">
+            <p class="form-note">
+              Los campos con * son obligatorios. Usa únicamente datos ficticios.
+            </p>
+
+            <fieldset>
+              <legend>Datos de contacto</legend>
+
+              <label for="nombre">Nombre completo *</label>
+              <input
+                id="nombre"
+                name="nombre"
+                type="text"
+                required
+                minlength="3"
+                autocomplete="name"
+                placeholder="Ej. Ana Prueba"
+                aria-describedby="nombre-help"
+              />
+              <small id="nombre-help">Mínimo 3 caracteres.</small>
+
+              <label for="email">Correo electrónico *</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                autocomplete="email"
+                placeholder="ana@example.test"
+                aria-describedby="email-help"
+              />
+              <small id="email-help">Ejemplo para la práctica: ana@example.test</small>
             </fieldset>
-            <label for="descripcion">Descripción del problema *</label>
-            <textarea
-              id="descripcion"
-              name="descripcion"
-              rows="5"
-              required
-              minlength="10"
-              maxlength="500"
-              aria-describedby="descripcion-help"
-            ></textarea>
-            <small id="descripcion-help"
-              >De 10 a 500 caracteres. Describe el problema sin incluir
-              contraseñas.</small
+
+            <fieldset>
+              <legend>Datos de la solicitud</legend>
+
+              <label for="tipo">Tipo de solicitud *</label>
+              <select id="tipo" name="tipo" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Soporte técnico">Soporte técnico</option>
+                <option value="Configuración">Configuración</option>
+                <option value="Consulta">Consulta</option>
+                <option value="Mantenimiento">Mantenimiento</option>
+              </select>
+
+              <fieldset class="priority">
+                <legend>Prioridad *</legend>
+                <label>
+                  <input type="radio" name="prioridad" value="Alta" required />
+                  Alta
+                </label>
+                <label>
+                  <input type="radio" name="prioridad" value="Media" />
+                  Media
+                </label>
+                <label>
+                  <input type="radio" name="prioridad" value="Baja" />
+                  Baja
+                </label>
+              </fieldset>
+
+              <label for="descripcion">Descripción *</label>
+              <textarea
+                id="descripcion"
+                name="descripcion"
+                rows="6"
+                required
+                minlength="10"
+                maxlength="500"
+                placeholder="Describe brevemente el problema o solicitud..."
+                aria-describedby="descripcion-help"
+              ></textarea>
+              <small id="descripcion-help"> Entre 10 y 500 caracteres. </small>
+            </fieldset>
+
+            <button
+              id="submit-demo"
+              class="button button--primary"
+              type="submit"
+              disabled
             >
-          </fieldset>
-          <button id="submit-demo" type="submit" disabled>
-            Validar solicitud de prueba
-          </button>
-          <p id="form-status" role="status" aria-live="polite"></p>
-          <noscript>Activa JavaScript para ejecutar la demostración.</noscript>
-        </form>
+              Simular envío
+            </button>
+
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+
+            <noscript>
+              Activa JavaScript para ejecutar la demostración del formulario.
+            </noscript>
+          </form>
+        </div>
+      </section>
+
+      <section class="section" id="estados" aria-labelledby="states-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">ESTADOS FICTICIOS</p>
+            <h2 id="states-title">Así se visualizaría una solicitud</h2>
+            <p>Estados de ejemplo para representar un flujo de atención.</p>
+          </div>
+
+          <div class="status-grid">
+            <article class="status-card">
+              <span class="badge badge--blue">Recibido</span>
+              <h3>Solicitud registrada</h3>
+              <p>La solicitud fue recibida y está pendiente de revisión.</p>
+            </article>
+
+            <article class="status-card">
+              <span class="badge badge--yellow">En revisión</span>
+              <h3>Analizando el caso</h3>
+              <p>Un técnico revisa la información proporcionada.</p>
+            </article>
+
+            <article class="status-card">
+              <span class="badge badge--purple">En atención</span>
+              <h3>Soporte trabajando</h3>
+              <p>La solicitud está siendo atendida por el área correspondiente.</p>
+            </article>
+
+            <article class="status-card">
+              <span class="badge badge--green">Resuelto</span>
+              <h3>Atención finalizada</h3>
+              <p>El caso fue solucionado y queda como referencia histórica.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--soft" id="preguntas" aria-labelledby="faq-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">PREGUNTAS FRECUENTES</p>
+            <h2 id="faq-title">Respuestas rápidas</h2>
+          </div>
+
+          <div class="faq-columns">
+            <div>
+              <h3 class="faq-category">Sobre las solicitudes</h3>
+
+              <details>
+                <summary>¿Cuánto demora la atención?</summary>
+                <p>
+                  En esta demostración los tiempos son ficticios y dependen de la
+                  prioridad asignada.
+                </p>
+              </details>
+
+              <details>
+                <summary>¿Puedo indicar una prioridad?</summary>
+                <p>
+                  Sí. El formulario ofrece Alta, Media y Baja como opciones de ejemplo.
+                </p>
+              </details>
+
+              <details>
+                <summary>¿Qué información debo colocar?</summary>
+                <p>
+                  Incluye nombre, correo, tipo, prioridad y una descripción clara del
+                  caso.
+                </p>
+              </details>
+            </div>
+
+            <div>
+              <h3 class="faq-category">Sobre el portal</h3>
+
+              <details>
+                <summary>¿El formulario guarda mis datos?</summary>
+                <p>No. Este portal es estático y solo simula el envío en el navegador.</p>
+              </details>
+
+              <details>
+                <summary>¿Puedo usarlo desde el celular?</summary>
+                <p>
+                  Sí. El diseño es mobile first y se adapta a diferentes anchos de
+                  pantalla.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="contact-section section"
+        id="contacto"
+        aria-labelledby="contact-title"
+      >
+        <div class="container contact-grid">
+          <div>
+            <p class="eyebrow">CONTACTO</p>
+            <h2 id="contact-title">Estamos disponibles para ayudarte</h2>
+            <p>Horario y datos ficticios para el proyecto académico.</p>
+          </div>
+
+          <div class="contact-list">
+            <div>
+              <strong>Horario</strong>
+              <span>Lunes a viernes: 8:00 a. m. – 6:00 p. m.</span>
+            </div>
+            <div>
+              <strong>Correo</strong>
+              <span>soporte@novaservicios.test</span>
+            </div>
+            <div>
+              <strong>Teléfono</strong>
+              <span>+51 900 000 000</span>
+            </div>
+            <div>
+              <strong>Ubicación</strong>
+              <span>Lima, Perú — atención ficticia</span>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
-    <footer class="container">
-      <p>Portal TI de práctica. Usa únicamente datos ficticios.</p>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Nova Servicios · Proyecto académico</p>
+        <a href="#inicio">Volver arriba ↑</a>
+      </div>
     </footer>
   </body>
 </html>
