@@ -30,9 +30,11 @@ La consigna exige seis espacios: encabezado y navegación, presentación princip
 ```
 
 ## Flujo principal
+
 Inicio → Solicitar soporte → Formulario → validación nativa → confirmación simulada.
 
 ## Criterios responsive
+
 - 320 px: una columna y sin desbordamiento horizontal.
 - 768 px: distribución intermedia.
 - 1440 px: contenido centrado con catálogo en varias columnas.

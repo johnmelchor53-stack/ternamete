@@ -3,6 +3,7 @@
 ## Entidades
 
 ### USUARIO
+
 - **id_usuario** (PK)
 - nombre
 - correo
@@ -11,12 +12,14 @@
 - estado
 
 ### SERVICIO
+
 - **id_servicio** (PK)
 - nombre
 - descripcion
 - estado
 
 ### SOLICITUD
+
 - **id_solicitud** (PK)
 - fecha_creacion
 - descripcion
@@ -26,6 +29,7 @@
 - id_servicio (FK)
 
 ### ACTUALIZACION
+
 - **id_actualizacion** (PK)
 - fecha
 - comentario
@@ -35,6 +39,7 @@
 - id_usuario (FK)
 
 ### AUDITORIA
+
 - **id_auditoria** (PK)
 - fecha_hora
 - accion
