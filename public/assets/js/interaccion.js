@@ -75,7 +75,7 @@ function validarFormulario() {
   if (!validarPrioridad() && !primerError) primerError = radios[0];
   if (!validarCampo('descripcion') && !primerError) primerError = descripcion;
   const motivo = document.querySelector('#motivo-urgencia');
-  const urgencia = validarUrgencia(radios.find(r => r.checked)?.value, motivo.value);
+  const urgencia = validarUrgencia(radios.find((r) => r.checked)?.value, motivo.value);
   document.querySelector('#error-urgencia').textContent = urgencia;
   motivo.setAttribute('aria-invalid', String(Boolean(urgencia)));
   if (urgencia && !primerError) primerError = motivo;

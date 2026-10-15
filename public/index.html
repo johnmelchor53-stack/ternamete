@@ -95,9 +95,17 @@
         <p id="estado-catalogo" class="estado-catalogo" role="status" aria-live="polite">
           Cargando servicios…
         </p>
-        <div class="campo"><label for="filtro-categoria">Filtrar por categoría</label>
-<select id="filtro-categoria"><option>Todas</option><option>Accesos</option><option>Hardware</option><option>Red</option><option>Software</option></select></div>
-<div id="catalogo" class="services__grid"></div>
+        <div class="campo">
+          <label for="filtro-categoria">Filtrar por categoría</label>
+          <select id="filtro-categoria">
+            <option>Todas</option>
+            <option>Accesos</option>
+            <option>Hardware</option>
+            <option>Red</option>
+            <option>Software</option>
+          </select>
+        </div>
+        <div id="catalogo" class="services__grid"></div>
         <button id="reintentar-catalogo" type="button" class="boton boton-oscuro" hidden>
           Reintentar carga</button
         ><noscript
@@ -194,11 +202,22 @@
               </select>
               <p id="error-servicio" class="error" role="alert"></p>
             </div>
-            <div class="campo"><label for="motivo-urgencia">Justificación de prioridad alta</label>
-<textarea id="motivo-urgencia" name="motivo-urgencia" rows="2" maxlength="200" aria-describedby="ayuda-urgencia error-urgencia"></textarea>
-<small id="ayuda-urgencia">Si eliges alta, explica el impacto con al menos 15 caracteres útiles.</small>
-<p id="error-urgencia" class="error" role="alert"></p></div>
-<fieldset id="grupo-prioridad" class="grupo-radio">
+            <div class="campo">
+              <label for="motivo-urgencia">Justificación de prioridad alta</label>
+              <textarea
+                id="motivo-urgencia"
+                name="motivo-urgencia"
+                rows="2"
+                maxlength="200"
+                aria-describedby="ayuda-urgencia error-urgencia"
+              ></textarea>
+              <small id="ayuda-urgencia"
+                >Si eliges alta, explica el impacto con al menos 15 caracteres
+                útiles.</small
+              >
+              <p id="error-urgencia" class="error" role="alert"></p>
+            </div>
+            <fieldset id="grupo-prioridad" class="grupo-radio">
               <legend>Prioridad de tu incidencia</legend>
               <div class="opciones-radio">
                 <label class="radio-opcion" for="prioridad-baja"
@@ -363,20 +382,59 @@
           <small>Datos de ejemplo · Sin atención real desde este portal</small>
         </div>
       </section>
-<section class="seccion" id="gestion-ea2"><h2>Gestión de práctica y auditoría</h2>
-<p>Elegir un rol es una simulación. No verifica identidades ni protege datos. Todo se elimina al recargar.</p>
-<div class="ea2-controles"><div class="campo"><label for="actor-demo">Rol de demostración</label>
-<select id="actor-demo"><option value="solicitante">Ana Demo solicitante</option><option value="tecnico">Carlos Demo técnico</option></select></div>
-<div class="campo"><label for="solicitud-gestion">Solicitud</label><select id="solicitud-gestion"><option value="">Crea una solicitud primero</option></select></div>
-<div class="campo"><label for="nuevo-estado">Nuevo estado</label><select id="nuevo-estado"><option>Pendiente</option><option>En proceso</option><option>Resuelto</option><option>Cerrado/Cancelado</option></select></div></div>
-<button type="button" id="cambiar-estado" class="boton boton-oscuro">Cambiar estado de práctica</button>
-<p role="status" id="estado-gestion" aria-live="polite"></p><ol id="lista-auditoria" aria-label="Historial de cambios de estado"></ol></section>
-<section class="seccion" id="medicion-ea2"><h2>Preferencia de analítica de práctica</h2>
-<p>Esta demostración cuenta elecciones de servicio y solicitudes válidas solo en memoria. No carga Google ni envía datos. Puedes cambiar tu decisión.</p>
-<button type="button" id="aceptar-analitica" class="boton boton-oscuro">Aceptar analítica</button>
-<button type="button" id="rechazar-analitica" class="boton">Rechazar analítica</button>
-<p id="estado-consentimiento" role="status">Sin decisión. No se registran eventos.</p>
-<p id="total-eventos" role="status" aria-live="polite">0 eventos</p></section>
+      <section class="seccion" id="gestion-ea2">
+        <h2>Gestión de práctica y auditoría</h2>
+        <p>
+          Elegir un rol es una simulación. No verifica identidades ni protege datos. Todo
+          se elimina al recargar.
+        </p>
+        <div class="ea2-controles">
+          <div class="campo">
+            <label for="actor-demo">Rol de demostración</label>
+            <select id="actor-demo">
+              <option value="solicitante">Ana Demo solicitante</option>
+              <option value="tecnico">Carlos Demo técnico</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="solicitud-gestion">Solicitud</label
+            ><select id="solicitud-gestion">
+              <option value="">Crea una solicitud primero</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="nuevo-estado">Nuevo estado</label
+            ><select id="nuevo-estado">
+              <option>Pendiente</option>
+              <option>En proceso</option>
+              <option>Resuelto</option>
+              <option>Cerrado/Cancelado</option>
+            </select>
+          </div>
+        </div>
+        <button type="button" id="cambiar-estado" class="boton boton-oscuro">
+          Cambiar estado de práctica
+        </button>
+        <p role="status" id="estado-gestion" aria-live="polite"></p>
+        <ol id="lista-auditoria" aria-label="Historial de cambios de estado"></ol>
+      </section>
+      <section class="seccion" id="medicion-ea2">
+        <h2>Preferencia de analítica de práctica</h2>
+        <p>
+          Esta demostración cuenta elecciones de servicio y solicitudes válidas solo en
+          memoria. No carga Google ni envía datos. Puedes cambiar tu decisión.
+        </p>
+        <button type="button" id="aceptar-analitica" class="boton boton-oscuro">
+          Aceptar analítica
+        </button>
+        <button type="button" id="rechazar-analitica" class="boton">
+          Rechazar analítica
+        </button>
+        <p id="estado-consentimiento" role="status">
+          Sin decisión. No se registran eventos.
+        </p>
+        <p id="total-eventos" role="status" aria-live="polite">0 eventos</p>
+      </section>
     </main>
     <footer class="pie">
       <span>© 2026 Nova Servicios TI</span

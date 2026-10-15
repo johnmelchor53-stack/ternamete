@@ -1,4 +1,5 @@
 # Retos EA2
+
 Base heredada: HTML, CSS, JSON, catálogo, formulario, ayuda y solicitudes en memoria de la semana 5.
 Integración nueva provista: controles y listeners de ea2-ui.js. No acredita puntos por sí misma.
 Implementa cuatro funciones en public/assets/js/ea2-logica.js y la animación en public/assets/css/ea2.css.

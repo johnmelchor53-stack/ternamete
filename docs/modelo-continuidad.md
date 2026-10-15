@@ -1,14 +1,15 @@
 # Continuidad del modelo conceptual
+
 Referencia de aprendizaje de semana 4, no nueva tarea calificada del EA2.
 La arquitectura prevista contiene cinco entidades; la implementación EA2 es una demo parcial en memoria.
 
-| Entidad | Claves y atributos esenciales |
-|---|---|
-| Usuario | usuario_id PK, nombre, correo, rol, activo |
-| Servicio | servicio_id PK, nombre, descripcion, categoria, prioridad |
-| Solicitud | solicitud_id PK, usuario_id FK, servicio_id FK, prioridad, descripcion, estado, fecha |
-| Actualizacion | actualizacion_id PK, solicitud_id FK, usuario_id FK, anterior, nuevo, comentario, fecha |
-| Auditoria | auditoria_id PK, usuario_id FK actor, entidad, entidad_id, accion, anterior, nuevo, fecha |
+| Entidad       | Claves y atributos esenciales                                                             |
+| ------------- | ----------------------------------------------------------------------------------------- |
+| Usuario       | usuario_id PK, nombre, correo, rol, activo                                                |
+| Servicio      | servicio_id PK, nombre, descripcion, categoria, prioridad                                 |
+| Solicitud     | solicitud_id PK, usuario_id FK, servicio_id FK, prioridad, descripcion, estado, fecha     |
+| Actualizacion | actualizacion_id PK, solicitud_id FK, usuario_id FK, anterior, nuevo, comentario, fecha   |
+| Auditoria     | auditoria_id PK, usuario_id FK actor, entidad, entidad_id, accion, anterior, nuevo, fecha |
 
 Relaciones: Usuario 1:N Solicitud; Servicio 1:N Solicitud; Solicitud 1:N Actualizacion;
 Usuario 1:N Actualizacion; Usuario 1:N Auditoria. Para eventos de solicitudes,

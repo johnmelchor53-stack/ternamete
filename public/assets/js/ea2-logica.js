@@ -1,11 +1,8 @@
-
 export function filtrarServicios(lista, categoria) {
   if (!Array.isArray(lista)) return [];
   if (categoria === 'Todas') return [...lista];
 
-  return lista.filter(
-    (servicio) => servicio?.categoria === categoria
-  );
+  return lista.filter((servicio) => servicio?.categoria === categoria);
 }
 
 export function validarUrgencia(prioridad, motivo) {
@@ -18,19 +15,8 @@ export function validarUrgencia(prioridad, motivo) {
   return '';
 }
 
-export function cambiarEstado(
-  solicitudes,
-  id,
-  nuevoEstado,
-  actor,
-  auditoria
-) {
-  const estadosValidos = [
-    'Pendiente',
-    'En proceso',
-    'Resuelto',
-    'Cerrado/Cancelado'
-  ];
+export function cambiarEstado(solicitudes, id, nuevoEstado, actor, auditoria) {
+  const estadosValidos = ['Pendiente', 'En proceso', 'Resuelto', 'Cerrado/Cancelado'];
 
   if (!Array.isArray(solicitudes) || !Array.isArray(auditoria)) {
     return false;
@@ -48,9 +34,7 @@ export function cambiarEstado(
   if (solicitud.estado === nuevoEstado) return false;
 
   const anterior = solicitud.estado;
-  const ids = auditoria
-    .map((registro) => registro?.id)
-    .filter(Number.isSafeInteger);
+  const ids = auditoria.map((registro) => registro?.id).filter(Number.isSafeInteger);
 
   const siguienteId = ids.length ? Math.max(...ids) + 1 : 1;
 
@@ -63,34 +47,18 @@ export function cambiarEstado(
     accion: 'CAMBIO_ESTADO',
     anterior,
     nuevo: nuevoEstado,
-    fecha: new Date().toISOString()
+    fecha: new Date().toISOString(),
   });
 
   return true;
 }
 
-export function registrarEvento(
-  consentimiento,
-  nombre,
-  servicio,
-  eventos
-) {
-  const nombresPermitidos = [
-    'select_service',
-    'submit_request'
-  ];
+export function registrarEvento(consentimiento, nombre, servicio, eventos) {
+  const nombresPermitidos = ['select_service', 'submit_request'];
 
-  const categoriasValidas = [
-    'Accesos',
-    'Hardware',
-    'Red',
-    'Software'
-  ];
+  const categoriasValidas = ['Accesos', 'Hardware', 'Red', 'Software'];
 
-  if (
-    consentimiento !== 'aceptado' ||
-    !nombresPermitidos.includes(nombre)
-  ) {
+  if (consentimiento !== 'aceptado' || !nombresPermitidos.includes(nombre)) {
     return false;
   }
 
@@ -110,7 +78,7 @@ export function registrarEvento(
   eventos.push({
     event: nombre,
     service_id: String(servicio.id),
-    categoria: servicio.categoria
+    categoria: servicio.categoria,
   });
 
   return true;

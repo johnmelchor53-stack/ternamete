@@ -1,4 +1,5 @@
 # Nova Servicios TI base EA2
+
 Continúa el portal de semana 5 con cuatro retos nuevos pendientes. Lee docs/retos.md.
 Abre la carpeta completa en VS Code. Requiere Node.js 22 o posterior.
 Ejecuta `npm run dev` y abre http://127.0.0.1:5500. No abras index.html por file://.
@@ -18,9 +19,9 @@ con Output Directory public. Preview se verifica antes del merge. Main sirve a p
 El workflow incluye checks básicos; para bloquear merge hay que configurar checks requeridos
 en protección de rama o ruleset. El workflow solo no impone esa restricción.
 
-Entrega: ZIP sin .git/node_modules/.env, repo, PR, Preview, producción, SHA de cada despliegue.
-Plantilla: autor ___; base recibida ___; cambios ___; herramientas y uso IA ___;
-repo ___; PR ___; Preview/SHA ___; producción/SHA ___; incidencias externas ___.
+Entrega: ZIP sin .git/node\*modules/.env, repo, PR, Preview, producción, SHA de cada despliegue.
+Plantilla: autor \*\*\*; base recibida _**; cambios **_; herramientas y uso IA _**;
+repo **_; PR _**; Preview/SHA **_; producción/SHA \_\*\*; incidencias externas \_\_\_.
 
 Continuidad hasta la semana 7: corregir observaciones, practicar revisión de HTML/CSS/JS,
 modelo, integración, SEO y flujo de publicación. El EF solicitado es TEÓRICO; este proyecto

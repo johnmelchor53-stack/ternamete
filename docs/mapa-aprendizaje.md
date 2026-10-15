@@ -1,4 +1,5 @@
 # Mapa de aprendizaje hasta el cierre
+
 1. HTML semántico, encabezados, cascada y variables CSS: public/index.html y assets/css/styles.css.
 2. Responsive, Flexbox/Grid y formularios: los mismos archivos; probar 320/768/1440 px y zoom.
 3. Calidad, SEO y revisión: metadatos del head, README, docs/pruebas.md y PR.

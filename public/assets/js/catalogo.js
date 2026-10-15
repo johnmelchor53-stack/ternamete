@@ -74,7 +74,9 @@ export function crearTarjeta(s) {
 }
 export function renderizarCatalogo(lista) {
   catalogo.replaceChildren(...lista.map(crearTarjeta));
-  aviso.textContent = lista.length ? lista.length + ' servicios visibles.' : 'No hay servicios en esta categoría.';
+  aviso.textContent = lista.length
+    ? lista.length + ' servicios visibles.'
+    : 'No hay servicios en esta categoría.';
 }
 export async function cargarServicios() {
   aviso.textContent = 'Cargando servicios…';
